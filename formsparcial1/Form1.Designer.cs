@@ -1,6 +1,6 @@
 ﻿namespace formsparcial1
 {
-    partial class Form1
+    partial class btnarea
     {
         /// <summary>
         ///  Required designer variable.
@@ -28,35 +28,80 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.txtradio = new System.Windows.Forms.TextBox();
+            this.texradio = new System.Windows.Forms.Label();
+            this.texaltura = new System.Windows.Forms.Label();
+            this.txtaltura = new System.Windows.Forms.TextBox();
+            this.calcular = new System.Windows.Forms.Button();
+            this.cancelar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // textBox1
+            // txtradio
             // 
-            this.textBox1.Location = new System.Drawing.Point(200, 20);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 23);
-            this.textBox1.TabIndex = 0;
+            this.txtradio.Location = new System.Drawing.Point(200, 20);
+            this.txtradio.Name = "txtradio";
+            this.txtradio.Size = new System.Drawing.Size(100, 23);
+            this.txtradio.TabIndex = 0;
             // 
-            // label1
+            // texradio
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(90, 20);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(38, 15);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "label1";
+            this.texradio.AutoSize = true;
+            this.texradio.Location = new System.Drawing.Point(90, 20);
+            this.texradio.Name = "texradio";
+            this.texradio.Size = new System.Drawing.Size(79, 15);
+            this.texradio.TabIndex = 1;
+            this.texradio.Text = "ingresar radio";
             // 
-            // Form1
+            // texaltura
+            // 
+            this.texaltura.AutoSize = true;
+            this.texaltura.Location = new System.Drawing.Point(87, 79);
+            this.texaltura.Name = "texaltura";
+            this.texaltura.Size = new System.Drawing.Size(82, 15);
+            this.texaltura.TabIndex = 5;
+            this.texaltura.Text = "ingresar altura";
+            this.texaltura.Click += new System.EventHandler(this.texaltura_Click);
+            // 
+            // txtaltura
+            // 
+            this.txtaltura.Location = new System.Drawing.Point(200, 79);
+            this.txtaltura.Name = "txtaltura";
+            this.txtaltura.Size = new System.Drawing.Size(100, 23);
+            this.txtaltura.TabIndex = 4;
+            // 
+            // calcular
+            // 
+            this.calcular.Location = new System.Drawing.Point(366, 20);
+            this.calcular.Name = "calcular";
+            this.calcular.Size = new System.Drawing.Size(75, 42);
+            this.calcular.TabIndex = 6;
+            this.calcular.Text = "Calcular";
+            this.calcular.UseVisualStyleBackColor = true;
+            // 
+            // cancelar
+            // 
+            this.cancelar.Location = new System.Drawing.Point(366, 78);
+            this.cancelar.Name = "cancelar";
+            this.cancelar.Size = new System.Drawing.Size(75, 23);
+            this.cancelar.TabIndex = 7;
+            this.cancelar.Text = "cancela";
+            this.cancelar.UseVisualStyleBackColor = true;
+            this.cancelar.Click += new System.EventHandler(this.cancelar_Click);
+            // 
+            // btnarea
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox1);
-            this.Name = "Form1";
+            this.Controls.Add(this.cancelar);
+            this.Controls.Add(this.calcular);
+            this.Controls.Add(this.texaltura);
+            this.Controls.Add(this.txtaltura);
+            this.Controls.Add(this.texradio);
+            this.Controls.Add(this.txtradio);
+            this.Name = "btnarea";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.btnarea_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -64,7 +109,11 @@
 
         #endregion
 
-        private TextBox textBox1;
-        private Label label1;
+        private TextBox txtradio;
+        private Label texradio;
+        private Label texaltura;
+        private TextBox txtaltura;
+        private Button calcular;
+        private Button cancelar;
     }
 }
