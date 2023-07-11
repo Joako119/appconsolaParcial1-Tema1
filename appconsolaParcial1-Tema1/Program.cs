@@ -2,26 +2,60 @@
 Console.WriteLine("Hello, World!");
 
 double contador, area,bases,altura , volumen, radio;
-
+bool salir;
+contador = 0;
+salir = true;
 do
 
 {
-	Console.WriteLine("Ingresar el radio del cilindro o si se desea salir ingresar cero");
-	radio= int.Parse(Console.ReadLine());
-	Console.WriteLine("Ingresa la altura del cilindro o si se desea salir ingresar cero");
-	altura= int.Parse(Console.ReadLine());
 
-	area = 2 * Math.PI * radio * (altura + radio);
-	bases = Math.PI * radio  * radio;
-	volumen = bases * altura;
 
+	try
+	{
+		radio = PedirDouble ("Ingresar el radio del cilindro o si se desea salir ingresar cero:  ");
+		
+		altura= PedirDouble ("Ingresa la altura del cilindro o si se desea salir ingresar cero:  ");
+		
+		
+		area = 2 * Math.PI * radio * (altura + radio);
+		bases = Math.PI * radio * radio;
+		volumen = bases * altura;
+		contador++;
+
+		Console.WriteLine($" El valor del area del {contador} cilindro es,  {area},  la base del mismo es {bases}  y su voumen es {volumen}");
+
+		if (radio == 0 && altura == 0) { salir = false; }
+	}
+	catch (FormatException ){ Console.WriteLine("Error por favor verificar el fomato ingresado"); }
+	catch (OverflowException ) { Console.WriteLine("Valores ingresados muy grasden"); }
+}
+	while (salir);
+ static double PedirDouble(string Mensaje)
+{
+	double nro = 0;
+	do
+	{
+		Console.Write(Mensaje);
+		string strConsola = Console.ReadLine();
+		if (!double.TryParse(strConsola, out nro))
+		{
+			Console.WriteLine("Número mal ingresado");
+
+		}
+		else
+		{
+			break;
+		}
+
+	} while (true);
+	return nro;
 }
 
-while (bases==0 && altura==0);
 
 
 
 
+Console.WriteLine( "Gracias");
 
 
 
